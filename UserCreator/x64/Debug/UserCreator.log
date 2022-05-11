@@ -1,0 +1,5 @@
+﻿  login.cpp
+  ui.cpp
+  Generating Code...
+  login.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+  UserCreator.vcxproj -> D:\.dev\repos\hshan-1\gandalf\UserCreator\x64\Debug\UserCreator.exe

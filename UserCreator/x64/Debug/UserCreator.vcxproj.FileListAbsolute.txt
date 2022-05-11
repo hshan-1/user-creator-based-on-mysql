@@ -1,0 +1,5 @@
+D:\.dev\repos\hshan-1\gandalf\UserCreator\x64\Debug\UserCreator.vcxproj.AssemblyReference.cache
+D:\.dev\repos\hshan-1\gandalf\UserCreator\x64\Debug\UserCreator.vcxproj.SuggestedBindingRedirects.cache
+D:\.dev\repos\hshan-1\gandalf\UserCreator\x64\Debug\UserCreator.exe
+D:\.dev\repos\hshan-1\gandalf\UserCreator\x64\Debug\UserCreator.ui.resources
+D:\.dev\repos\hshan-1\gandalf\UserCreator\x64\Debug\UserCreator.vcxproj.GenerateResource.cache
