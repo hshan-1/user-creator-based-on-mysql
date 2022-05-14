@@ -47,6 +47,7 @@ namespace UserCreator {
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::Timer^ blocade;
 	private: System::Windows::Forms::Label^ loginfo;
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	private: System::ComponentModel::IContainer^ components;
 
 	private:
@@ -71,6 +72,8 @@ namespace UserCreator {
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->blocade = (gcnew System::Windows::Forms::Timer(this->components));
 			this->loginfo = (gcnew System::Windows::Forms::Label());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// login
@@ -99,12 +102,14 @@ namespace UserCreator {
 			this->getaccs->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
 			resources->ApplyResources(this->getaccs, L"getaccs");
 			this->getaccs->Name = L"getaccs";
+			this->getaccs->TabStop = false;
 			this->getaccs->UseVisualStyleBackColor = false;
 			this->getaccs->Click += gcnew System::EventHandler(this, &ui::getaccs_Click);
 			// 
 			// newUser
 			// 
 			this->newUser->BackColor = System::Drawing::Color::Transparent;
+			this->newUser->FlatAppearance->BorderColor = System::Drawing::Color::Black;
 			this->newUser->FlatAppearance->BorderSize = 0;
 			this->newUser->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
 			this->newUser->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
@@ -117,6 +122,7 @@ namespace UserCreator {
 			// 
 			this->button1->BackColor = System::Drawing::Color::Transparent;
 			this->button1->DialogResult = System::Windows::Forms::DialogResult::Cancel;
+			this->button1->FlatAppearance->BorderColor = System::Drawing::Color::Black;
 			this->button1->FlatAppearance->BorderSize = 0;
 			this->button1->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
 			this->button1->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
@@ -136,6 +142,12 @@ namespace UserCreator {
 			this->loginfo->ForeColor = System::Drawing::Color::DarkRed;
 			this->loginfo->Name = L"loginfo";
 			// 
+			// pictureBox1
+			// 
+			resources->ApplyResources(this->pictureBox1, L"pictureBox1");
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->TabStop = false;
+			// 
 			// ui
 			// 
 			this->AcceptButton = this->getaccs;
@@ -149,6 +161,7 @@ namespace UserCreator {
 			this->Controls->Add(this->getaccs);
 			this->Controls->Add(this->passwd);
 			this->Controls->Add(this->login);
+			this->Controls->Add(this->pictureBox1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->MaximizeBox = false;
 			this->MinimizeBox = false;
@@ -158,6 +171,7 @@ namespace UserCreator {
 			this->SizeGripStyle = System::Windows::Forms::SizeGripStyle::Show;
 			this->TopMost = true;
 			this->Load += gcnew System::EventHandler(this, &ui::ui_Load);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -168,6 +182,7 @@ namespace UserCreator {
 
 	private: System::Void ui_Load(System::Object^ sender, System::EventArgs^ e) {
 		//MessageBox::Show("Welcome to user creator\nlogger\npasswordcheccker\nmooltitool\naudioplayer\ndemonaslayer");
+		this->ClientSize = System::Drawing::Size(524, 524);
 	}
 	private: void control(String^ login, String^ passwd)//checks log info 
 	{
@@ -231,7 +246,7 @@ private: System::Void passwd_TextChanged(System::Object^ sender, System::EventAr
 }
 public: System::Void getaccs_Click(System::Object^ sender, System::EventArgs^ e){
 	this->loginfo->Visible = false;
-	this->button1->Location = System::Drawing::Point(208, 356);
+	this->button1->Location = System::Drawing::Point(215, 364);
 	String^ login = this->login->Text;
 	String^ passwd = this->passwd->Text;
 	int sLength = this->passwd->TextLength;
@@ -244,14 +259,18 @@ private: System::Void login_KeyDown(System::Object^ sender, System::Windows::For
 		Random^ rand = gcnew Random;
 		int tone = rand->Next(3, 9);
 		Beep(tone * 100, 100);
+	
 	}
 }
 private: System::Void passwd_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
 	if ("")
 	{
 		Random^ rand = gcnew Random;
-		int tone =rand->Next(3,9);
-		Beep(tone*100, 100);
+		int tone =rand->Next(0,23);
+		Beep((tone*100)+350, 100);
+		char maskedpasswordchar[24] = { 'a', 'b', 'c', 'd','e','f','g','h','j','k','l','m','n','o','p','r','s','t','u','w','y','z','x','q' };
+		//char maskedpasswordchar[24] = {001,002,003,004,005,006,007,030,011,012,042,014,015,016,017,020,021,022,023,024}; these funky characters didn't work 
+		this->passwd->PasswordChar += maskedpasswordchar[tone];
 	}
 }
 private: System::Void blocade_Tick(System::Object^ sender, System::EventArgs^ e) {
@@ -262,7 +281,8 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 }
 
 private: System::Void newUser_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->button1->Location = System::Drawing::Point(421, 419);
+	//this->button1->Location = System::Drawing::Point(421, 419);
+	this->ClientSize = System::Drawing::Size(1050, 525);
 	//fstream file_op("C:\\users\\%USERNAME%\\userfiles\\userCreator\\LaPxcv.txt",ios::out);//not working yet
 	
 	
