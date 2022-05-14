@@ -1,7 +1,7 @@
 #pragma once
 #include<Windows.h>
 #include<string.h>
-
+#include"core.h"
 
 
 namespace UserCreator {
@@ -13,6 +13,7 @@ namespace UserCreator {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	//using namespace MySql::Data::MySqlClient;
 
 	/// <summary>
 	/// Summary for ui
@@ -23,9 +24,7 @@ namespace UserCreator {
 		ui(void)
 		{
 			InitializeComponent();
-			//
-			//TODO: Add the constructor code here
-			//
+			
 		}
 
 	protected:
@@ -179,18 +178,26 @@ namespace UserCreator {
 #pragma endregion
 
 		int a = 0;
+		String^ status = "offline";
 
 	private: System::Void ui_Load(System::Object^ sender, System::EventArgs^ e) {
 		//MessageBox::Show("Welcome to user creator\nlogger\npasswordcheccker\nmooltitool\naudioplayer\ndemonaslayer");
 		this->ClientSize = System::Drawing::Size(524, 524);
+		
 	}
 	private: void control(String^ login, String^ passwd)//checks log info 
 	{
+
 		if (login=="admin" && passwd == "admin1")
 		{
 			Beep(1000, 100);
 			MessageBox::Show("WELCOME", "HELLO", MessageBoxButtons::OK);
-			}
+			status = "admin";
+			this->Hide();
+			Form^ core = gcnew Form();
+			core->ShowDialog();
+			this->Close();
+		}
 		else
 		{
 			this->loginfo->Visible = true;
@@ -204,35 +211,36 @@ namespace UserCreator {
 		{
 			case 3:
 			{
-				MessageBox::Show(a*10+" sec cooldown");
 				this->getaccs->Visible = false;
 				this->blocade->Interval = a*10000;
 				this->blocade->Start();
+				MessageBox::Show(a*10+" sec cooldown");
 				break;
 			}
 			case 10:
 			{
 				a = 9;
-				MessageBox::Show(a * 10 + " sec cooldown");
 				this->getaccs->Visible = false;
 				this->blocade->Interval = a * 10000;
 				this->blocade->Start();
+				MessageBox::Show(a * 10 + " sec cooldown");
 				break;
 			}
 			case 6:
-			{
-				MessageBox::Show(a * 10 + " sec cooldown");	
+			{	
 				this->getaccs->Visible = false;
 				this->blocade->Interval = a * 10000;
 				this->blocade->Start();
+				MessageBox::Show(a * 10 + " sec cooldown");
 				break;
 			}
 			case 9:
 			{
-				MessageBox::Show(a * 10 + " sec cooldown");
+
 				this->getaccs->Visible = false;
 				this->blocade->Interval = a * 10000;
 				this->blocade->Start();
+				MessageBox::Show(a * 10 + " sec cooldown");
 				break;
 			}
 		}
@@ -250,8 +258,17 @@ public: System::Void getaccs_Click(System::Object^ sender, System::EventArgs^ e)
 	String^ login = this->login->Text;
 	String^ passwd = this->passwd->Text;
 	int sLength = this->passwd->TextLength;
-	control(login, passwd);
-	Beep(1000, 100);
+	if (status == "offline")
+	{
+		control(login, passwd);
+	}
+	else
+	{
+		this->login->Enabled = false;
+		this->passwd->Enabled = false;
+	}
+	String^ sqlconfig = "datasource=localhost;3306;username=root;password=guest1;userapp";
+	
 }
 private: System::Void login_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
 	if ("")
@@ -282,8 +299,14 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 
 private: System::Void newUser_Click(System::Object^ sender, System::EventArgs^ e) {
 	//this->button1->Location = System::Drawing::Point(421, 419);
-	this->ClientSize = System::Drawing::Size(1050, 525);
-	//fstream file_op("C:\\users\\%USERNAME%\\userfiles\\userCreator\\LaPxcv.txt",ios::out);//not working yet
+	if (status == "admin") 
+	{
+		this->ClientSize = System::Drawing::Size(1050, 525);
+	}
+	else
+	{
+		MessageBox::Show("Log in to admin to create new user");
+	}
 	
 	
 }

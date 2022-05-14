@@ -141,10 +141,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="core.cpp" />
     <ClCompile Include="login.cpp" />
     <ClCompile Include="ui.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="core.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="ui.h">
       <FileType>CppForm</FileType>
     </ClInclude>
