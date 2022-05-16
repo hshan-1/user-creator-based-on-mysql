@@ -4,6 +4,9 @@
     <ProjectOutput>
       <FullPath>D:\.dev\repos\hshan-1\gandalf\UserCreator\x64\Debug\UserCreator.exe</FullPath>
     </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>D:\.dev\repos\hshan-1\gandalf\UserCreator\x64\Debug\UserCreator.exe.config</FullPath>
+    </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />
   <SatelliteDlls />

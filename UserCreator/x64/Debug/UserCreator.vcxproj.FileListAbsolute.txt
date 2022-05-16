@@ -1,5 +1,4 @@
 D:\.dev\repos\hshan-1\gandalf\UserCreator\x64\Debug\UserCreator.vcxproj.AssemblyReference.cache
-D:\.dev\repos\hshan-1\gandalf\UserCreator\x64\Debug\UserCreator.vcxproj.SuggestedBindingRedirects.cache
 D:\.dev\repos\hshan-1\gandalf\UserCreator\x64\Debug\UserCreator.exe
 D:\.dev\repos\hshan-1\gandalf\UserCreator\x64\Debug\UserCreator.ui.resources
 D:\.dev\repos\hshan-1\gandalf\UserCreator\x64\Debug\UserCreator.vcxproj.GenerateResource.cache
@@ -8,3 +7,18 @@ D:\.dev\repos\hshan-1\oldgandalf\UserCreator\x64\Debug\UserCreator.vcxproj.Sugge
 D:\.dev\repos\hshan-1\oldgandalf\UserCreator\x64\Debug\UserCreator.ui.resources
 D:\.dev\repos\hshan-1\oldgandalf\UserCreator\x64\Debug\UserCreator.vcxproj.GenerateResource.cache
 D:\.dev\repos\hshan-1\oldgandalf\UserCreator\x64\Debug\UserCreator.exe
+D:\.dev\repos\hshan-1\gandalf\UserCreator\x64\Debug\UserCreator.core.resources
+D:\.dev\repos\hshan-1\gandalf\UserCreator\x64\Debug\UserCreator.vcxproj.SuggestedBindingRedirects.cache
+D:\.dev\repos\hshan-1\gandalf\UserCreator\x64\Debug\UserCreator.exe.config
+D:\.dev\repos\hshan-1\gandalf\UserCreator\x64\Debug\UserCreator.vcxproj.CopyComplete
+D:\.dev\repos\hshan-1\gandalf\UserCreator\x64\Debug\MySql.Data.dll
+D:\.dev\repos\hshan-1\gandalf\UserCreator\x64\Debug\Google.Protobuf.dll
+D:\.dev\repos\hshan-1\gandalf\UserCreator\x64\Debug\ZstdNet.dll
+D:\.dev\repos\hshan-1\gandalf\UserCreator\x64\Debug\K4os.Compression.LZ4.Streams.dll
+D:\.dev\repos\hshan-1\gandalf\UserCreator\x64\Debug\BouncyCastle.Crypto.dll
+D:\.dev\repos\hshan-1\gandalf\UserCreator\x64\Debug\Ubiety.Dns.Core.dll
+D:\.dev\repos\hshan-1\gandalf\UserCreator\x64\Debug\System.Memory.dll
+D:\.dev\repos\hshan-1\gandalf\UserCreator\x64\Debug\System.Buffers.dll
+D:\.dev\repos\hshan-1\gandalf\UserCreator\x64\Debug\K4os.Compression.LZ4.dll
+D:\.dev\repos\hshan-1\gandalf\UserCreator\x64\Debug\K4os.Hash.xxHash.dll
+D:\.dev\repos\hshan-1\gandalf\UserCreator\x64\Debug\MySql.Data.xml
