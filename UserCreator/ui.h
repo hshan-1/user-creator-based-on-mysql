@@ -47,6 +47,7 @@ namespace UserCreator {
 	private: System::Windows::Forms::Timer^ blocade;
 	private: System::Windows::Forms::Label^ loginfo;
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
+	private: System::Windows::Forms::Label^ label1;
 	private: System::ComponentModel::IContainer^ components;
 
 	private:
@@ -72,6 +73,7 @@ namespace UserCreator {
 			this->blocade = (gcnew System::Windows::Forms::Timer(this->components));
 			this->loginfo = (gcnew System::Windows::Forms::Label());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -147,6 +149,12 @@ namespace UserCreator {
 			this->pictureBox1->Name = L"pictureBox1";
 			this->pictureBox1->TabStop = false;
 			// 
+			// label1
+			// 
+			resources->ApplyResources(this->label1, L"label1");
+			this->label1->Name = L"label1";
+			this->label1->Text = "\"kurwa\"";
+			// 
 			// ui
 			// 
 			this->AcceptButton = this->getaccs;
@@ -154,6 +162,7 @@ namespace UserCreator {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
 			this->CancelButton = this->button1;
+			this->Controls->Add(this->label1);
 			this->Controls->Add(this->loginfo);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->newUser);
@@ -187,22 +196,36 @@ namespace UserCreator {
 	}
 	private: void control(String^ login, String^ passwd)//checks log info 
 	{
-
-		if (login=="admin" && passwd == "admin1")
+		String^ sqlconfig = L"datasource=localhost;port=3306;username=root;password=guest1;database=userapp";
+		MySqlConnection^ con_toData= gcnew MySqlConnection(sqlconfig);
+		MySqlCommand^ sql_syntax = gcnew MySqlCommand("SELECT id FROM userapp.user WHERE login='"+login+"'AND password = 'concat('*',UPPER(SHA1(UNHEX(SHA1(\""+ passwd +"\")))))';", con_toData);
+		MySqlDataReader^ r_records;
+		try
 		{
-			Beep(1000, 100);
-			MessageBox::Show("WELCOME", "HELLO", MessageBoxButtons::OK);
-			status = "admin";
-			this->Hide();
-			Form^ core = gcnew Form();
-			core->ShowDialog();
-			this->Close();
+			con_toData->Open();
+			r_records = sql_syntax->ExecuteReader();
+			if (r_records->Read())
+			{
+				
+				Beep(1000, 100);
+				MessageBox::Show("WELCOME", "HELLO", MessageBoxButtons::OK);
+				status = "admin";
+				//this->Hide();
+				Form^ core = gcnew Form();
+				core->ShowDialog();
+				this->Close();
+			}
+			else
+			{
+				this->loginfo->Visible = true;
+				guard();//control sends info to guard 
+			}
 		}
-		else
+		catch (Exception^ r_fail)
 		{
-			this->loginfo->Visible = true;
-			guard();//control sends info to guard 
-		}
+			MessageBox::Show(""+r_fail->Message);
+			
+		}	
 	}
 	private: void guard()//i don't know yet
 	{
@@ -267,7 +290,7 @@ public: System::Void getaccs_Click(System::Object^ sender, System::EventArgs^ e)
 		this->login->Enabled = false;
 		this->passwd->Enabled = false;
 	}
-	String^ sqlconfig = "datasource=localhost;3306;username=root;password=guest1;userapp";
+	//String^ sqlconfig = "datasource=localhost;3306;username=root;password=guest1;userapp";
 	
 }
 private: System::Void login_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {

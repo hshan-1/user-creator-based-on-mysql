@@ -151,7 +151,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;login.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="passwd.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 20pt</value>
@@ -190,7 +190,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;passwd.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="getaccs.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -217,7 +217,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;getaccs.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="newUser.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -245,7 +245,7 @@ new user</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;newUser.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="button1.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -273,7 +273,7 @@ new user</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <metadata name="blocade.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -309,12 +309,12 @@ new user</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;loginfo.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="pictureBox1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgwAAAIMCAIAAAAW5GNYAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAAEx9JREFUeF7t20GO88iRhuG5oS/ki8xiLuD1AD7H+ETTQjXk8tcVLCVFppLBB3hW
+        vgAADr4B6kKxwAAAEx9JREFUeF7t20GO88iRhuG5oS/ki8xiLuD1AD7H+ETTQjXk8tcVLCVFppLBB3hW
         Df2sDCmD76r/63/++S8A+JFIAFASCQBKIgFASSQAKIkEACWRAKAkEgCURAKAkkgAUBIJAEoiAUBJJAAo
         iQQAJZEAoCQSAJREAoCSSABQEgkASiIBQEkkACiJBAAlkQCgJBIAlEQCgJJIAFDaE4n//t//A+AORAKA
         kkgAUBIJAEoiAUBJJAAoiQQAJZEAoCQSAJREAoCSSABQEgkASiIBQEkkACiJBAAlkQCgJBIAlEQCgJJI
@@ -402,7 +402,7 @@ new user</value>
   <data name="pictureBox1.InitialImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgwAAAIMCAIAAAAW5GNYAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAAEx9JREFUeF7t20GO88iRhuG5oS/ki8xiLuD1AD7H+ETTQjXk8tcVLCVFppLBB3hW
+        vgAADr4B6kKxwAAAEx9JREFUeF7t20GO88iRhuG5oS/ki8xiLuD1AD7H+ETTQjXk8tcVLCVFppLBB3hW
         Df2sDCmD76r/63/++S8A+JFIAFASCQBKIgFASSQAKIkEACWRAKAkEgCURAKAkkgAUBIJAEoiAUBJJAAo
         iQQAJZEAoCQSAJREAoCSSABQEgkASiIBQEkkACiJBAAlkQCgJBIAlEQCgJJIAFDaE4n//t//A+AORAKA
         kkgAUBIJAEoiAUBJJAAoiQQAJZEAoCQSAJREAoCSSABQEgkASiIBQEkkACiJBAAlkQCgJBIAlEQCgJJI
@@ -506,7 +506,37 @@ new user</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 20pt, style=Bold</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>93, 613</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 31</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>kurwa</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -518,7 +548,7 @@ new user</value>
     <value>Zoom</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1034, 486</value>
+    <value>1034, 696</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
