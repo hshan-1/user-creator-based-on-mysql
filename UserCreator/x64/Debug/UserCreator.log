@@ -1,2 +1,6 @@
 ﻿D:\Programy\VStudio2022\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(514,5): warning MSB8028: Katalog pośredni (x64\Debug\) zawiera pliki udostępnione z innego projektu (SecuredApp.vcxproj). Może to spowodować niepoprawne zachowanie podczas oczyszczania i ponownej kompilacji.
+  login.cpp
+  ui.cpp
+  Generowanie kodu...
+  core.obj : napotkano moduł MSIL; konsolidowanie przyrostowe jest wyłączone dla modułów MSIL; zostanie wykonana pełna konsolidacja
   UserCreator.vcxproj -> D:\.dev\repos\hshan-1\gandalf\UserCreator\x64\Debug\UserCreator.exe

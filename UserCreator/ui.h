@@ -48,6 +48,16 @@ namespace UserCreator {
 	private: System::Windows::Forms::Label^ loginfo;
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::PictureBox^ pictureBox2;
+	private: System::Windows::Forms::Button^ newUserAdd;
+	private: System::Windows::Forms::Button^ discardNewUser;
+	private: System::Windows::Forms::Button^ adminList_btn;
+	private: System::Windows::Forms::Button^ newAdmin;
+	private: System::Windows::Forms::TextBox^ newName_txb;
+	private: System::Windows::Forms::TextBox^ newLName_txb;
+	private: System::Windows::Forms::TextBox^ newLogin_txt;
+	private: System::Windows::Forms::TextBox^ newPasswd_txb;
+	private: System::Windows::Forms::TextBox^ confPasswd_txb;
 	private: System::ComponentModel::IContainer^ components;
 
 	private:
@@ -74,7 +84,18 @@ namespace UserCreator {
 			this->loginfo = (gcnew System::Windows::Forms::Label());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
+			this->newUserAdd = (gcnew System::Windows::Forms::Button());
+			this->discardNewUser = (gcnew System::Windows::Forms::Button());
+			this->adminList_btn = (gcnew System::Windows::Forms::Button());
+			this->newAdmin = (gcnew System::Windows::Forms::Button());
+			this->newName_txb = (gcnew System::Windows::Forms::TextBox());
+			this->newLName_txb = (gcnew System::Windows::Forms::TextBox());
+			this->newLogin_txt = (gcnew System::Windows::Forms::TextBox());
+			this->newPasswd_txb = (gcnew System::Windows::Forms::TextBox());
+			this->confPasswd_txb = (gcnew System::Windows::Forms::TextBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// login
@@ -153,7 +174,96 @@ namespace UserCreator {
 			// 
 			resources->ApplyResources(this->label1, L"label1");
 			this->label1->Name = L"label1";
-			this->label1->Text = "\"kurwa\"";
+			// 
+			// pictureBox2
+			// 
+			resources->ApplyResources(this->pictureBox2, L"pictureBox2");
+			this->pictureBox2->Name = L"pictureBox2";
+			this->pictureBox2->TabStop = false;
+			// 
+			// newUserAdd
+			// 
+			this->newUserAdd->BackColor = System::Drawing::Color::Transparent;
+			this->newUserAdd->FlatAppearance->BorderColor = System::Drawing::Color::Black;
+			this->newUserAdd->FlatAppearance->BorderSize = 0;
+			this->newUserAdd->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->newUserAdd->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
+			resources->ApplyResources(this->newUserAdd, L"newUserAdd");
+			this->newUserAdd->Name = L"newUserAdd";
+			this->newUserAdd->UseVisualStyleBackColor = false;
+			this->newUserAdd->Click += gcnew System::EventHandler(this, &ui::newUserAdd_Click);
+			// 
+			// discardNewUser
+			// 
+			this->discardNewUser->BackColor = System::Drawing::Color::Transparent;
+			this->discardNewUser->FlatAppearance->BorderColor = System::Drawing::Color::Black;
+			this->discardNewUser->FlatAppearance->BorderSize = 0;
+			this->discardNewUser->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->discardNewUser->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
+			resources->ApplyResources(this->discardNewUser, L"discardNewUser");
+			this->discardNewUser->Name = L"discardNewUser";
+			this->discardNewUser->UseVisualStyleBackColor = false;
+			this->discardNewUser->Click += gcnew System::EventHandler(this, &ui::discardNewUser_Click);
+			// 
+			// adminList_btn
+			// 
+			this->adminList_btn->BackColor = System::Drawing::Color::Transparent;
+			this->adminList_btn->FlatAppearance->BorderColor = System::Drawing::Color::Black;
+			this->adminList_btn->FlatAppearance->BorderSize = 0;
+			this->adminList_btn->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->adminList_btn->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
+			resources->ApplyResources(this->adminList_btn, L"adminList_btn");
+			this->adminList_btn->Name = L"adminList_btn";
+			this->adminList_btn->UseVisualStyleBackColor = false;
+			this->adminList_btn->Click += gcnew System::EventHandler(this, &ui::adminList_btn_Click);
+			// 
+			// newAdmin
+			// 
+			this->newAdmin->BackColor = System::Drawing::Color::Transparent;
+			this->newAdmin->FlatAppearance->BorderColor = System::Drawing::Color::Black;
+			this->newAdmin->FlatAppearance->BorderSize = 0;
+			this->newAdmin->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->newAdmin->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
+			resources->ApplyResources(this->newAdmin, L"newAdmin");
+			this->newAdmin->Name = L"newAdmin";
+			this->newAdmin->UseVisualStyleBackColor = false;
+			// 
+			// newName_txb
+			// 
+			this->newName_txb->BackColor = System::Drawing::SystemColors::ActiveCaption;
+			this->newName_txb->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			resources->ApplyResources(this->newName_txb, L"newName_txb");
+			this->newName_txb->Name = L"newName_txb";
+			// 
+			// newLName_txb
+			// 
+			this->newLName_txb->BackColor = System::Drawing::SystemColors::ActiveCaption;
+			this->newLName_txb->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			resources->ApplyResources(this->newLName_txb, L"newLName_txb");
+			this->newLName_txb->Name = L"newLName_txb";
+			// 
+			// newLogin_txt
+			// 
+			this->newLogin_txt->BackColor = System::Drawing::SystemColors::ActiveCaption;
+			this->newLogin_txt->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			resources->ApplyResources(this->newLogin_txt, L"newLogin_txt");
+			this->newLogin_txt->Name = L"newLogin_txt";
+			// 
+			// newPasswd_txb
+			// 
+			this->newPasswd_txb->BackColor = System::Drawing::SystemColors::ActiveCaption;
+			this->newPasswd_txb->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			resources->ApplyResources(this->newPasswd_txb, L"newPasswd_txb");
+			this->newPasswd_txb->Name = L"newPasswd_txb";
+			this->newPasswd_txb->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &ui::newPasswd_txb_KeyDown);
+			// 
+			// confPasswd_txb
+			// 
+			this->confPasswd_txb->BackColor = System::Drawing::SystemColors::ActiveCaption;
+			this->confPasswd_txb->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			resources->ApplyResources(this->confPasswd_txb, L"confPasswd_txb");
+			this->confPasswd_txb->Name = L"confPasswd_txb";
+			this->confPasswd_txb->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &ui::confPasswd_txb_KeyDown);
 			// 
 			// ui
 			// 
@@ -162,6 +272,16 @@ namespace UserCreator {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
 			this->CancelButton = this->button1;
+			this->Controls->Add(this->confPasswd_txb);
+			this->Controls->Add(this->newPasswd_txb);
+			this->Controls->Add(this->newLogin_txt);
+			this->Controls->Add(this->newLName_txb);
+			this->Controls->Add(this->newName_txb);
+			this->Controls->Add(this->newAdmin);
+			this->Controls->Add(this->adminList_btn);
+			this->Controls->Add(this->discardNewUser);
+			this->Controls->Add(this->newUserAdd);
+			this->Controls->Add(this->pictureBox2);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->loginfo);
 			this->Controls->Add(this->button1);
@@ -180,6 +300,7 @@ namespace UserCreator {
 			this->TopMost = true;
 			this->Load += gcnew System::EventHandler(this, &ui::ui_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -198,7 +319,7 @@ namespace UserCreator {
 	{
 		String^ sqlconfig = L"datasource=localhost;port=3306;username=root;password=guest1;database=userapp";
 		MySqlConnection^ con_toData= gcnew MySqlConnection(sqlconfig);
-		MySqlCommand^ sql_syntax = gcnew MySqlCommand("SELECT id FROM userapp.user WHERE login='"+login+"'AND password = 'concat('*',UPPER(SHA1(UNHEX(SHA1(\""+ passwd +"\")))))';", con_toData);
+		MySqlCommand^ sql_syntax = gcnew MySqlCommand("SELECT id FROM userapp.user WHERE login='"+login+"' AND passwd = concat(UPPER(SHA1(UNHEX(SHA1(\""+ passwd +"\")))));", con_toData);
 		MySqlDataReader^ r_records;
 		try
 		{
@@ -209,14 +330,15 @@ namespace UserCreator {
 				
 				Beep(1000, 100);
 				MessageBox::Show("WELCOME", "HELLO", MessageBoxButtons::OK);
-				status = "admin";
-				//this->Hide();
-				Form^ core = gcnew Form();
-				core->ShowDialog();
-				this->Close();
+				status = "online";
+				this->login->Enabled = false;
+				this->passwd->Enabled = false;
+				this->getaccs->Text = "Log out";
 			}
 			else
 			{
+				Beep(150, 100);
+				Beep(200, 100);
 				this->loginfo->Visible = true;
 				guard();//control sends info to guard 
 			}
@@ -227,11 +349,19 @@ namespace UserCreator {
 			
 		}	
 	}
-	private: void guard()//i don't know yet
+	private: void guard()
 	{
 		a++;
 		switch (a)
 		{
+			case 1:
+			{
+				break;
+			}
+			case 2:
+			{
+				break;
+			}
 			case 3:
 			{
 				this->getaccs->Visible = false;
@@ -242,7 +372,6 @@ namespace UserCreator {
 			}
 			case 10:
 			{
-				a = 9;
 				this->getaccs->Visible = false;
 				this->blocade->Interval = a * 10000;
 				this->blocade->Start();
@@ -260,6 +389,14 @@ namespace UserCreator {
 			case 9:
 			{
 
+				this->getaccs->Visible = false;
+				this->blocade->Interval = a * 10000;
+				this->blocade->Start();
+				MessageBox::Show(a * 10 + " sec cooldown");
+				break;
+			}
+			default:
+			{
 				this->getaccs->Visible = false;
 				this->blocade->Interval = a * 10000;
 				this->blocade->Start();
@@ -287,8 +424,10 @@ public: System::Void getaccs_Click(System::Object^ sender, System::EventArgs^ e)
 	}
 	else
 	{
-		this->login->Enabled = false;
-		this->passwd->Enabled = false;
+		status = "offline";
+		this->login->Enabled = true;
+		this->passwd->Enabled = true;
+		this->getaccs->Text = "Log in";
 	}
 	//String^ sqlconfig = "datasource=localhost;3306;username=root;password=guest1;userapp";
 	
@@ -303,15 +442,14 @@ private: System::Void login_KeyDown(System::Object^ sender, System::Windows::For
 	}
 }
 private: System::Void passwd_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
-	if ("")
-	{
+
 		Random^ rand = gcnew Random;
 		int tone =rand->Next(0,23);
 		Beep((tone*100)+350, 100);
 		char maskedpasswordchar[24] = { 'a', 'b', 'c', 'd','e','f','g','h','j','k','l','m','n','o','p','r','s','t','u','w','y','z','x','q' };
 		//char maskedpasswordchar[24] = {001,002,003,004,005,006,007,030,011,012,042,014,015,016,017,020,021,022,023,024}; these funky characters didn't work 
 		this->passwd->PasswordChar += maskedpasswordchar[tone];
-	}
+
 }
 private: System::Void blocade_Tick(System::Object^ sender, System::EventArgs^ e) {
 	this->getaccs->Visible = true;
@@ -322,7 +460,7 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 
 private: System::Void newUser_Click(System::Object^ sender, System::EventArgs^ e) {
 	//this->button1->Location = System::Drawing::Point(421, 419);
-	if (status == "admin") 
+	if (status == "online") 
 	{
 		this->ClientSize = System::Drawing::Size(1050, 525);
 	}
@@ -332,6 +470,84 @@ private: System::Void newUser_Click(System::Object^ sender, System::EventArgs^ e
 	}
 	
 	
+}
+private: System::Void adminList_btn_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void newUserAdd_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (status == "online")//can create new user if online 
+	{
+		if ((newName_txb != nullptr) && (newLName_txb != nullptr) && (newLogin_txt != nullptr) && (newPasswd_txb != nullptr))//don't really need that, database don't accept empty records
+		{
+			String^ passwd = newPasswd_txb->ToString();
+			String^ confpasswd = confPasswd_txb->ToString();//i couldn't figure out better way really 
+			if (passwd == confpasswd)
+			{
+				String^ sqlconfig = L"datasource=localhost;port=3306;username=root;password=guest1;database=userapp";
+				MySqlConnection^ con_toData = gcnew MySqlConnection(sqlconfig);
+				MySqlCommand^ sql_syntax = gcnew MySqlCommand("INSERT INTO userapp.user(`login`, `passwd`, `first_name`, `last_name`) VALUES ('" + (newLogin_txt->Text) + "', concat(UPPER(SHA1(UNHEX(SHA1('" + (newPasswd_txb->Text) + "'))))), '" + (newName_txb->Text) + "', '" + (newLName_txb->Text) + "')", con_toData);
+				MySqlDataReader^ r_records;
+				try
+				{
+					con_toData->Open();
+					r_records = sql_syntax->ExecuteReader();
+
+					Beep(1000, 100);
+					Beep(1600, 90);
+					MessageBox::Show("User added", "New User", MessageBoxButtons::OK);
+
+				}
+				catch (Exception^ r_fail)
+				{
+					MessageBox::Show(r_fail->Message, "New User");
+
+				}
+			}
+			else
+			{
+				MessageBox::Show("Passwords are not indenticall");
+			}
+		}
+		else
+		{
+			MessageBox::Show("Forms can't be empty");
+		}
+	}
+	else//hide option to create new user while offline and form extended
+	{
+		this->ClientSize = System::Drawing::Size(524, 524);
+		MessageBox::Show("You must be logged in\nto create new user", "Alert");
+	}
+}
+private: System::Void newPasswd_txb_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
+
+	Random^ rand = gcnew Random;
+	int tone = rand->Next(0, 23);
+	Beep((tone * 100) + 350, 100);
+	char maskedpasswordchar[24] = { 'a', 'b', 'c', 'd','e','f','g','h','j','k','l','m','n','o','p','r','s','t','u','w','y','z','x','q' };
+	//char maskedpasswordchar[24] = {001,002,003,004,005,006,007,030,011,012,042,014,015,016,017,020,021,022,023,024}; these funky characters didn't work 
+	
+	this->newPasswd_txb->PasswordChar += maskedpasswordchar[tone];
+	
+
+}
+private: System::Void confPasswd_txb_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
+
+	Random^ rand = gcnew Random;
+	int tone = rand->Next(0, 23);
+	Beep((tone * 100) + 350, 100);
+	char maskedpasswordchar[24] = { 'a', 'b', 'c', 'd','e','f','g','h','j','k','l','m','n','o','p','r','s','t','u','w','y','z','x','q' };
+	//char maskedpasswordchar[24] = {001,002,003,004,005,006,007,030,011,012,042,014,015,016,017,020,021,022,023,024}; these funky characters didn't work 
+
+	this->confPasswd_txb->PasswordChar += maskedpasswordchar[tone];
+
+}
+private: System::Void discardNewUser_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->newName_txb->Text = "First Name";
+	this->newLName_txb->Text = "Last Name";
+	this->newLogin_txt->Text = "Login";
+	this->newPasswd_txb->Text = "Password";
+	this->confPasswd_txb->Text = "Confirm Password";
+	this->ClientSize = System::Drawing::Size(524, 524);
 }
 };
 }
