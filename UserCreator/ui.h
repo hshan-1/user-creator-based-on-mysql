@@ -227,6 +227,7 @@ namespace UserCreator {
 			resources->ApplyResources(this->newAdmin, L"newAdmin");
 			this->newAdmin->Name = L"newAdmin";
 			this->newAdmin->UseVisualStyleBackColor = false;
+			this->newAdmin->Click += gcnew System::EventHandler(this, &ui::newAdmin_Click);
 			// 
 			// newName_txb
 			// 
@@ -315,6 +316,10 @@ namespace UserCreator {
 		this->ClientSize = System::Drawing::Size(524, 524);
 		
 	}
+	public: void control(String^ sql_syntax)
+	{
+
+	}
 	private: void control(String^ login, String^ passwd)//checks log info 
 	{
 		String^ sqlconfig = L"datasource=localhost;port=3306;username=root;password=guest1;database=userapp";
@@ -330,10 +335,17 @@ namespace UserCreator {
 				
 				Beep(1000, 100);
 				MessageBox::Show("WELCOME", "HELLO", MessageBoxButtons::OK);
-				status = "online";
 				this->login->Enabled = false;
 				this->passwd->Enabled = false;
 				this->getaccs->Text = "Log out";
+				/*sql_syntax = ("");
+				r_records = 
+				if ()
+				{
+								//check if admin or noadmin or smth
+				}*/
+				this->blocade->Interval = 300000;
+				this->blocade->Start();
 			}
 			else
 			{
@@ -362,45 +374,13 @@ namespace UserCreator {
 			{
 				break;
 			}
-			case 3:
-			{
-				this->getaccs->Visible = false;
-				this->blocade->Interval = a*10000;
-				this->blocade->Start();
-				MessageBox::Show(a*10+" sec cooldown");
-				break;
-			}
-			case 10:
-			{
-				this->getaccs->Visible = false;
-				this->blocade->Interval = a * 10000;
-				this->blocade->Start();
-				MessageBox::Show(a * 10 + " sec cooldown");
-				break;
-			}
-			case 6:
-			{	
-				this->getaccs->Visible = false;
-				this->blocade->Interval = a * 10000;
-				this->blocade->Start();
-				MessageBox::Show(a * 10 + " sec cooldown");
-				break;
-			}
-			case 9:
-			{
-
-				this->getaccs->Visible = false;
-				this->blocade->Interval = a * 10000;
-				this->blocade->Start();
-				MessageBox::Show(a * 10 + " sec cooldown");
-				break;
-			}
 			default:
 			{
 				this->getaccs->Visible = false;
 				this->blocade->Interval = a * 10000;
 				this->blocade->Start();
 				MessageBox::Show(a * 10 + " sec cooldown");
+				a = 0;
 				break;
 			}
 		}
@@ -453,6 +433,9 @@ private: System::Void passwd_KeyDown(System::Object^ sender, System::Windows::Fo
 }
 private: System::Void blocade_Tick(System::Object^ sender, System::EventArgs^ e) {
 	this->getaccs->Visible = true;
+	this->getaccs->Text = "Log in";
+	status = "offline";
+	this->passwd->Text = "";
 }
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 	Form::Close();
@@ -548,6 +531,50 @@ private: System::Void discardNewUser_Click(System::Object^ sender, System::Event
 	this->newPasswd_txb->Text = "Password";
 	this->confPasswd_txb->Text = "Confirm Password";
 	this->ClientSize = System::Drawing::Size(524, 524);
+}
+private: System::Void newAdmin_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (status == "admin")//only admin can create new admin user 
+	{
+		if ((newName_txb != nullptr) && (newLName_txb != nullptr) && (newLogin_txt != nullptr) && (newPasswd_txb != nullptr))//don't really need that, database don't accept empty records
+		{
+			String^ passwd = newPasswd_txb->ToString();
+			String^ confpasswd = confPasswd_txb->ToString();//i couldn't figure out better way really 
+			if (passwd == confpasswd)
+			{
+				String^ sqlconfig = L"datasource=localhost;port=3306;username=root;password=guest1;database=userapp";
+				MySqlConnection^ con_toData = gcnew MySqlConnection(sqlconfig);
+				MySqlCommand^ sql_syntax = gcnew MySqlCommand("INSERT INTO userapp.user(`login`, `passwd`, `first_name`, `last_name`,`admin`) VALUES ('" + (newLogin_txt->Text) + "', concat(UPPER(SHA1(UNHEX(SHA1('" + (newPasswd_txb->Text) + "'))))), '" + (newName_txb->Text) + "', '" + (newLName_txb->Text) + "','1')", con_toData);
+				MySqlDataReader^ r_records;
+				try
+				{
+					con_toData->Open();
+					r_records = sql_syntax->ExecuteReader();
+
+					Beep(1000, 100);
+					Beep(1600, 90);
+					MessageBox::Show("User added", "New User", MessageBoxButtons::OK);
+
+				}
+				catch (Exception^ r_fail)
+				{
+					MessageBox::Show(r_fail->Message, "New User");
+
+				}
+			}
+			else
+			{
+				MessageBox::Show("Passwords are not indenticall");
+			}
+		}
+		else
+		{
+			MessageBox::Show("Forms can't be empty");
+		}
+	}
+	else
+	{
+		MessageBox::Show("Only admin can create another admin", "Alert");
+	}
 }
 };
 }

@@ -232,4 +232,5 @@ Class UserCreator.ui: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:
+    control(String): PrivateScope, Public, HideBySig
     getaccs_Click(Object, EventArgs): PrivateScope, Public, HideBySig
