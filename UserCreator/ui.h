@@ -13,7 +13,7 @@ namespace UserCreator {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
-	using namespace UserCreator;
+	//using namespace UserCreator;
 	using namespace MySql::Data::MySqlClient;
 
 	/// <summary>

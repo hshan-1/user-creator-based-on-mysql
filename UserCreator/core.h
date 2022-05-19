@@ -8,7 +8,7 @@ namespace UserCreator {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
-	using namespace UserCreator;
+	//using namespace UserCreator;
 
 	/// <summary>
 	/// Summary for core
@@ -63,10 +63,9 @@ namespace UserCreator {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1437, 778);
+			this->ClientSize = System::Drawing::Size(927, 580);
 			this->Name = L"core";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"e";
 			this->Load += gcnew System::EventHandler(this, &core::core_Load);
 			this->ResumeLayout(false);
 
