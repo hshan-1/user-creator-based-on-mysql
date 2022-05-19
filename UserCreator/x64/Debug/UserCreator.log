@@ -1,4 +1,6 @@
 ﻿D:\Programy\VStudio2022\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(514,5): warning MSB8028: Katalog pośredni (x64\Debug\) zawiera pliki udostępnione z innego projektu (SecuredApp.vcxproj). Może to spowodować niepoprawne zachowanie podczas oczyszczania i ponownej kompilacji.
-  ui.cpp
   core.obj : napotkano moduł MSIL; konsolidowanie przyrostowe jest wyłączone dla modułów MSIL; zostanie wykonana pełna konsolidacja
-  UserCreator.vcxproj -> D:\.dev\repos\hshan-1\gandalf\UserCreator\x64\Debug\UserCreator.exe
+login.obj : error LNK2022: operacja na metadanych nie powiodła się (801311D6): Inna liczba metod w zduplikowanych typach (UserCreator.core): (0x02000003).
+login.obj : error LNK2022: operacja na metadanych nie powiodła się (80131188): Niespójne deklaracje pól w zduplikowanych typach (typy: UserCreator.core; pola: textBox1): (0x0400012c).
+login.obj : error LNK2022: operacja na metadanych nie powiodła się (801311D7): Inna liczba pól w zduplikowanych typach (UserCreator.core): (0x02000003).
+LINK : fatal error LNK1255: konsolidowanie nie powiodło się z powodu błędów metadanych

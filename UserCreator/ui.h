@@ -327,6 +327,7 @@ namespace UserCreator {
 		//MessageBox::Show("Welcome to user creator\nlogger\npasswordcheccker\nmooltitool\naudioplayer\ndemonaslayer");
 		this->ClientSize = System::Drawing::Size(524, 524);
 		this->statusInfo->Text = status+"";
+		
 	}
 	public: void control(String^ sql_syntax)
 	{

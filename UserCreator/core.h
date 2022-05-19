@@ -35,7 +35,13 @@ namespace UserCreator {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::TextBox^ textBox1;
+
+
+	protected:
+
+	protected:
+
+
 	protected:
 
 	private:
@@ -51,34 +57,24 @@ namespace UserCreator {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->SuspendLayout();
-			// 
-			// textBox1
-			// 
-			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20));
-			this->textBox1->Location = System::Drawing::Point(298, 197);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(611, 38);
-			this->textBox1->TabIndex = 0;
-			this->textBox1->Text = L"test";
 			// 
 			// core
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1437, 778);
-			this->Controls->Add(this->textBox1);
 			this->Name = L"core";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"core";
+			this->Text = L"e";
 			this->Load += gcnew System::EventHandler(this, &core::core_Load);
 			this->ResumeLayout(false);
-			this->PerformLayout();
 
 		}
 #pragma endregion
 	private: System::Void core_Load(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void l2_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 	};
 }
