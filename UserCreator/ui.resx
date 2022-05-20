@@ -135,7 +135,7 @@
     <value>0</value>
   </data>
   <data name="login.Text" xml:space="preserve">
-    <value>Login</value>
+    <value>garrar</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="login.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
@@ -169,7 +169,7 @@
     <value>1</value>
   </data>
   <data name="passwd.Text" xml:space="preserve">
-    <value>password</value>
+    <value>snail1</value>
   </data>
   <data name="passwd.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -215,6 +215,9 @@
   </data>
   <data name="&gt;&gt;getaccs.ZOrder" xml:space="preserve">
     <value>15</value>
+  </data>
+  <data name="newUser.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="newUser.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>

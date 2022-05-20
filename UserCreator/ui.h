@@ -117,6 +117,7 @@ namespace UserCreator {
 			resources->ApplyResources(this->passwd, L"passwd");
 			this->passwd->Name = L"passwd";
 			this->passwd->Click += gcnew System::EventHandler(this, &ui::passwd_TextChanged);
+			this->passwd->TextChanged += gcnew System::EventHandler(this, &ui::passwd_TextChanged_1);
 			this->passwd->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &ui::passwd_KeyDown);
 			// 
 			// getaccs
@@ -134,11 +135,11 @@ namespace UserCreator {
 			// newUser
 			// 
 			this->newUser->BackColor = System::Drawing::Color::Transparent;
+			resources->ApplyResources(this->newUser, L"newUser");
 			this->newUser->FlatAppearance->BorderColor = System::Drawing::Color::Black;
 			this->newUser->FlatAppearance->BorderSize = 0;
 			this->newUser->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
 			this->newUser->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
-			resources->ApplyResources(this->newUser, L"newUser");
 			this->newUser->Name = L"newUser";
 			this->newUser->UseVisualStyleBackColor = false;
 			this->newUser->Click += gcnew System::EventHandler(this, &ui::newUser_Click);
@@ -373,8 +374,7 @@ namespace UserCreator {
 						break;
 					}
 				}
-				this->blocade->Interval = 10000;
-				//this->blocade->Interval = 300000;
+				this->blocade->Interval = 300000;
 				this->blocade->Start();
 				this->login->Enabled = false;
 				this->passwd->Enabled = false;
@@ -429,6 +429,7 @@ private: System::Void passwd_TextChanged(System::Object^ sender, System::EventAr
 	this->passwd->Text = "";
 }
 public: System::Void getaccs_Click(System::Object^ sender, System::EventArgs^ e){
+	this->newUser->Enabled = true;
 	this->loginfo->Visible = false;
 	this->button1->Location = System::Drawing::Point(215, 364);
 	String^ login = this->login->Text;
@@ -492,10 +493,12 @@ private: System::Void newUser_Click(System::Object^ sender, System::EventArgs^ e
 	//this->button1->Location = System::Drawing::Point(421, 419);
 	if (status == "admin") 
 	{
+		this->newUser->Enabled = true;
 		this->ClientSize = System::Drawing::Size(1050, 525);
 	}
 	else
 	{
+		this->newUser->Enabled = false;
 		MessageBox::Show("Log in to admin\nto create new user");
 	}
 	
@@ -504,10 +507,12 @@ private: System::Void newUser_Click(System::Object^ sender, System::EventArgs^ e
 private: System::Void adminList_btn_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void newUserAdd_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (status == "online")//can create new user if online 
+	if (status == "admin")//can create new user if online 
 	{
+		
 		if ((newName_txb != nullptr) && (newLName_txb != nullptr) && (newLogin_txt != nullptr) && (newPasswd_txb != nullptr))//don't really need that, database don't accept empty records
 		{
+			this->newUserAdd->Enabled = true;
 			String^ passwd = newPasswd_txb->ToString();
 			String^ confpasswd = confPasswd_txb->ToString();//i couldn't figure out better way really 
 			if (passwd == confpasswd)
@@ -523,7 +528,7 @@ private: System::Void newUserAdd_Click(System::Object^ sender, System::EventArgs
 
 					Beep(1000, 100);
 					Beep(1600, 90);
-					MessageBox::Show("User added", "New User", MessageBoxButtons::OK);
+					MessageBox::Show("User added\nLogin: '" + (newLogin_txt->Text) + "'\nName: " + (newName_txb->Text) + " " + (newLName_txb->Text) + "", "New User", MessageBoxButtons::OK);
 
 				}
 				catch (Exception^ r_fail)
@@ -539,6 +544,7 @@ private: System::Void newUserAdd_Click(System::Object^ sender, System::EventArgs
 		}
 		else
 		{
+			this->newUserAdd->Enabled = false;
 			MessageBox::Show("Forms can't be empty");
 		}
 	}
@@ -584,6 +590,7 @@ private: System::Void discardNewUser_Click(System::Object^ sender, System::Event
 private: System::Void newAdmin_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (status == "admin")//only admin can create new admin user 
 	{
+		this->newAdmin->Enabled = true;
 		if ((newName_txb != nullptr) && (newLName_txb != nullptr) && (newLogin_txt != nullptr) && (newPasswd_txb != nullptr))//don't really need that, database don't accept empty records
 		{
 			String^ passwd = newPasswd_txb->ToString();
@@ -601,7 +608,7 @@ private: System::Void newAdmin_Click(System::Object^ sender, System::EventArgs^ 
 
 					Beep(1000, 100);
 					Beep(1600, 90);
-					MessageBox::Show("User added", "New User", MessageBoxButtons::OK);
+					MessageBox::Show("Admin added\nLogin: '" + (newLogin_txt->Text) + "'\nName: "+(newName_txb->Text) + " "+(newLName_txb->Text) + "", "New Admin", MessageBoxButtons::OK);
 
 				}
 				catch (Exception^ r_fail)
@@ -622,6 +629,7 @@ private: System::Void newAdmin_Click(System::Object^ sender, System::EventArgs^ 
 	}
 	else
 	{
+		this->newAdmin->Enabled = false;
 		MessageBox::Show("Only admin can create another admin", "Alert");
 		this->ClientSize = System::Drawing::Size(524, 524);
 	}
@@ -641,6 +649,8 @@ private: System::Void statusInfo_TextChanged(System::Object^ sender, System::Eve
 private: System::Void statusInfo_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void passwd_TextChanged_1(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
