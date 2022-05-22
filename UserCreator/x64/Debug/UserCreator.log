@@ -1,1 +1,6 @@
-﻿  UserCreator.vcxproj -> D:\.dev\repos\hshan-1\gandalf\UserCreator\x64\Debug\UserCreator.exe
+﻿  core.cpp
+  login.cpp
+  ui.cpp
+  Generowanie kodu...
+  core.obj : napotkano moduł MSIL; konsolidowanie przyrostowe jest wyłączone dla modułów MSIL; zostanie wykonana pełna konsolidacja
+  UserCreator.vcxproj -> D:\.dev\repos\hshan-1\gandalf\UserCreator\x64\Debug\UserCreator.exe

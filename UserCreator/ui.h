@@ -309,7 +309,6 @@ namespace UserCreator {
 			this->MinimizeBox = false;
 			this->Name = L"ui";
 			this->ShowIcon = false;
-			this->ShowInTaskbar = false;
 			this->SizeGripStyle = System::Windows::Forms::SizeGripStyle::Show;
 			this->TopMost = true;
 			this->Load += gcnew System::EventHandler(this, &ui::ui_Load);
@@ -367,9 +366,8 @@ namespace UserCreator {
 						this->statusInfo->Text = status;
 						core^ nextform = gcnew core(r_records->GetString(3), r_records->GetString(4), status);
 						this->TopMost = false;
-						this->MinimizeBox = true;
 						nextform->Show();
-						this->Hide();
+						this->Visible = false;
 						nextform->Enabled = true;
 						break;
 					}
