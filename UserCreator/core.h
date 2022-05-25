@@ -45,6 +45,10 @@ namespace UserCreator {
 	private: System::Windows::Forms::GroupBox^ groupBox1;
 	private: System::Windows::Forms::TextBox^ oldpasswd_L;
 	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::TextBox^ newPassword_1;
+
+	private: System::Windows::Forms::TextBox^ newPassword;
+
 
 
 	private: System::ComponentModel::IContainer^ components;
@@ -75,6 +79,8 @@ namespace UserCreator {
 			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
+			this->newPassword_1 = (gcnew System::Windows::Forms::TextBox());
+			this->newPassword = (gcnew System::Windows::Forms::TextBox());
 			this->oldpasswd_L = (gcnew System::Windows::Forms::TextBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->blocade = (gcnew System::Windows::Forms::Timer(this->components));
@@ -122,6 +128,8 @@ namespace UserCreator {
 			// 
 			this->groupBox1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->groupBox1->BackColor = System::Drawing::Color::Crimson;
+			this->groupBox1->Controls->Add(this->newPassword_1);
+			this->groupBox1->Controls->Add(this->newPassword);
 			this->groupBox1->Controls->Add(this->oldpasswd_L);
 			this->groupBox1->Controls->Add(this->button1);
 			this->groupBox1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
@@ -132,13 +140,40 @@ namespace UserCreator {
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Change Password";
 			// 
+			// newPassword_1
+			// 
+			this->newPassword_1->BackColor = System::Drawing::Color::Crimson;
+			this->newPassword_1->Font = (gcnew System::Drawing::Font(L"Alef", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->newPassword_1->Location = System::Drawing::Point(6, 90);
+			this->newPassword_1->Name = L"newPassword_1";
+			this->newPassword_1->Size = System::Drawing::Size(188, 35);
+			this->newPassword_1->TabIndex = 7;
+			this->newPassword_1->Text = L"New Password";
+			this->newPassword_1->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->newPassword_1->TextChanged += gcnew System::EventHandler(this, &core::textBox2_TextChanged);
+			// 
+			// newPassword
+			// 
+			this->newPassword->BackColor = System::Drawing::Color::Crimson;
+			this->newPassword->Font = (gcnew System::Drawing::Font(L"Alef", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->newPassword->Location = System::Drawing::Point(6, 55);
+			this->newPassword->Name = L"newPassword";
+			this->newPassword->Size = System::Drawing::Size(188, 35);
+			this->newPassword->TabIndex = 6;
+			this->newPassword->Text = L"New Password";
+			this->newPassword->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->newPassword->TextChanged += gcnew System::EventHandler(this, &core::textBox1_TextChanged);
+			// 
 			// oldpasswd_L
 			// 
 			this->oldpasswd_L->BackColor = System::Drawing::Color::Crimson;
-			this->oldpasswd_L->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15));
+			this->oldpasswd_L->Font = (gcnew System::Drawing::Font(L"Alef", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
 			this->oldpasswd_L->Location = System::Drawing::Point(6, 19);
 			this->oldpasswd_L->Name = L"oldpasswd_L";
-			this->oldpasswd_L->Size = System::Drawing::Size(188, 30);
+			this->oldpasswd_L->Size = System::Drawing::Size(188, 35);
 			this->oldpasswd_L->TabIndex = 5;
 			this->oldpasswd_L->Text = L"Old Password";
 			this->oldpasswd_L->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
@@ -148,7 +183,8 @@ namespace UserCreator {
 			// 
 			this->button1->FlatAppearance->BorderSize = 0;
 			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold));
+			this->button1->Font = (gcnew System::Drawing::Font(L"Alef", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
 			this->button1->Location = System::Drawing::Point(6, 136);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(188, 68);
@@ -198,25 +234,38 @@ namespace UserCreator {
 		}
 #pragma endregion
 
-		int afk = 0;
+	int afk = 0;
 	
 
 
 
-	private: System::Void core_Load(System::Object^ sender, System::EventArgs^ e) {
-		this->ClientSize = System::Drawing::Size(1449, 655);
-		this->blocade->Start();
+private: System::Void core_Load(System::Object^ sender, System::EventArgs^ e) {
+	this->ClientSize = System::Drawing::Size(1449, 655);
+	this->blocade->Start();//start countdown to afk blocade 
+}
+private: void sqlfunc(String^ sqlcommand,int option)//using database in more convenient way i think 
+{					//send specific command //option is for specific action on database 1-insert 2-Detele 3-update etc.
+
+	switch (option)//i don't know yet 
+	{
+		case 1:
+		{
+
+		}
+		case 2:
+		{
+
+		}
 	}
-private: System::Void core_ClientSizeChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void core_ClientSizeChanged(System::Object^ sender, System::EventArgs^ e) {//oh yea 
 	int width = this->Width;
 	int Height = this->Height;
 	int yourname_width = this->yourname->Width;
 	this->tabControl1->Size = System::Drawing::Size(width - (yourname_width+20), Height -80);
-
-}
-	   
-private: System::Void blocade_Tick(System::Object^ sender, System::EventArgs^ e) {
-	
+	//works just fine 
+}	   
+private: System::Void blocade_Tick(System::Object^ sender, System::EventArgs^ e) {//idk
 	afk++;
 	if (afk == 9)
 	{
@@ -241,14 +290,42 @@ private: System::Void blocade_Tick(System::Object^ sender, System::EventArgs^ e)
 		this->ParentForm->Visible = true;
 		Application::Exit();
 	}
-
 }
-private: System::Void oldpasswd_L_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+private: void mask(int index)//does it make any sense? maybe. does it work? ofcourse 
+	{//very well
 	Random^ rand = gcnew Random;
 	int tone = rand->Next(0, 23);
 	Beep((tone)+100, 100);
 	char maskedpasswordchar[24] = { 'a', 'b', 'c', 'd','e','f','g','h','j','k','l','m','n','o','p','r','s','t','u','w','y','z','x','q' };
-	this->oldpasswd_L->PasswordChar += maskedpasswordchar[tone];
+
+		switch (index)
+		{
+			case 1:
+				this->oldpasswd_L->PasswordChar += maskedpasswordchar[tone];
+				break;
+			case 2:
+			{
+				this->newPassword->PasswordChar += maskedpasswordchar[tone];
+				break;
+			}
+			case 3:
+			{
+				this->newPassword_1->PasswordChar += maskedpasswordchar[tone];
+				break;
+			}
+		}
+	}
+private: System::Void oldpasswd_L_TextChanged(System::Object^ sender, System::EventArgs^ e)
+{
+	mask(1);
+}
+private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) 
+{
+	mask(2);
+}
+private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) 
+{
+	mask(3);
 }
 };
 }

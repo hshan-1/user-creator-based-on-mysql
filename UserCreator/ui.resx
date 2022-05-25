@@ -119,7 +119,7 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="login.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 20pt</value>
+    <value>Alef, 16pt</value>
   </data>
   <data name="login.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 163</value>
@@ -129,7 +129,7 @@
     <value>32</value>
   </data>
   <data name="login.Size" type="System.Drawing.Size, System.Drawing">
-    <value>484, 31</value>
+    <value>484, 30</value>
   </data>
   <data name="login.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -154,7 +154,7 @@
     <value>17</value>
   </data>
   <data name="passwd.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 20pt</value>
+    <value>Alef, 16pt</value>
   </data>
   <data name="passwd.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 252</value>
@@ -163,7 +163,7 @@
     <value>16</value>
   </data>
   <data name="passwd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>484, 31</value>
+    <value>484, 30</value>
   </data>
   <data name="passwd.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -189,14 +189,23 @@
   <data name="&gt;&gt;passwd.ZOrder" xml:space="preserve">
     <value>16</value>
   </data>
+  <metadata name="getaccs.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="getaccs.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
+  </data>
+  <data name="getaccs.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Alef, 8.25pt</value>
+  </data>
+  <data name="getaccs.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="getaccs.Location" type="System.Drawing.Point, System.Drawing">
     <value>142, 309</value>
   </data>
   <data name="getaccs.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 61</value>
+    <value>63, 63</value>
   </data>
   <data name="getaccs.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -216,17 +225,26 @@
   <data name="&gt;&gt;getaccs.ZOrder" xml:space="preserve">
     <value>15</value>
   </data>
+  <metadata name="newUser.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="newUser.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="newUser.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
+  <data name="newUser.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Alef, 8.25pt</value>
+  </data>
+  <data name="newUser.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="newUser.Location" type="System.Drawing.Point, System.Drawing">
     <value>288, 306</value>
   </data>
   <data name="newUser.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 61</value>
+    <value>63, 63</value>
   </data>
   <data name="newUser.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -247,14 +265,23 @@ new user</value>
   <data name="&gt;&gt;newUser.ZOrder" xml:space="preserve">
     <value>14</value>
   </data>
+  <metadata name="button1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="button1.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
+  </data>
+  <data name="button1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Alef, 8.25pt</value>
+  </data>
+  <data name="button1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
     <value>215, 364</value>
   </data>
   <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 61</value>
+    <value>63, 63</value>
   </data>
   <data name="button1.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -311,6 +338,9 @@ new user</value>
   <data name="&gt;&gt;loginfo.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
+  <metadata name="pictureBox1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="pictureBox1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgwAAAIMCAIAAAAW5GNYAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -711,7 +741,7 @@ new user</value>
 </value>
   </data>
   <data name="pictureBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>516, 0</value>
+    <value>475, 0</value>
   </data>
   <data name="pictureBox2.Size" type="System.Drawing.Size, System.Drawing">
     <value>524, 524</value>
@@ -734,14 +764,17 @@ new user</value>
   <data name="newUserAdd.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
+  <data name="newUserAdd.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Alef, 8.25pt</value>
+  </data>
   <data name="newUserAdd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="newUserAdd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>630, 342</value>
+    <value>588, 340</value>
   </data>
   <data name="newUserAdd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 61</value>
+    <value>65, 65</value>
   </data>
   <data name="newUserAdd.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -764,14 +797,17 @@ new user</value>
   <data name="discardNewUser.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
+  <data name="discardNewUser.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Alef, 8.25pt</value>
+  </data>
   <data name="discardNewUser.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="discardNewUser.Location" type="System.Drawing.Point, System.Drawing">
-    <value>703, 412</value>
+    <value>661, 410</value>
   </data>
   <data name="discardNewUser.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 61</value>
+    <value>65, 65</value>
   </data>
   <data name="discardNewUser.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -794,14 +830,17 @@ new user</value>
   <data name="adminList_btn.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
+  <data name="adminList_btn.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Alef, 8.25pt</value>
+  </data>
   <data name="adminList_btn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="adminList_btn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>850, 431</value>
+    <value>808, 429</value>
   </data>
   <data name="adminList_btn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 61</value>
+    <value>65, 65</value>
   </data>
   <data name="adminList_btn.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -824,14 +863,17 @@ new user</value>
   <data name="newAdmin.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
+  <data name="newAdmin.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Alef, 8.25pt</value>
+  </data>
   <data name="newAdmin.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="newAdmin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>778, 365</value>
+    <value>736, 363</value>
   </data>
   <data name="newAdmin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 61</value>
+    <value>65, 65</value>
   </data>
   <data name="newAdmin.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -852,16 +894,16 @@ new user</value>
     <value>6</value>
   </data>
   <data name="newName_txb.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 20pt</value>
+    <value>Alef, 16pt</value>
   </data>
   <data name="newName_txb.Location" type="System.Drawing.Point, System.Drawing">
-    <value>530, 63</value>
+    <value>489, 63</value>
   </data>
   <data name="newName_txb.MaxLength" type="System.Int32, mscorlib">
     <value>32</value>
   </data>
   <data name="newName_txb.Size" type="System.Drawing.Size, System.Drawing">
-    <value>484, 31</value>
+    <value>484, 30</value>
   </data>
   <data name="newName_txb.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -885,16 +927,16 @@ new user</value>
     <value>5</value>
   </data>
   <data name="newLName_txb.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 20pt</value>
+    <value>Alef, 16pt</value>
   </data>
   <data name="newLName_txb.Location" type="System.Drawing.Point, System.Drawing">
-    <value>530, 114</value>
+    <value>489, 114</value>
   </data>
   <data name="newLName_txb.MaxLength" type="System.Int32, mscorlib">
     <value>32</value>
   </data>
   <data name="newLName_txb.Size" type="System.Drawing.Size, System.Drawing">
-    <value>484, 31</value>
+    <value>484, 30</value>
   </data>
   <data name="newLName_txb.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -918,16 +960,16 @@ new user</value>
     <value>4</value>
   </data>
   <data name="newLogin_txt.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 20pt</value>
+    <value>Alef, 16pt</value>
   </data>
   <data name="newLogin_txt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>530, 163</value>
+    <value>489, 163</value>
   </data>
   <data name="newLogin_txt.MaxLength" type="System.Int32, mscorlib">
     <value>32</value>
   </data>
   <data name="newLogin_txt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>484, 31</value>
+    <value>484, 30</value>
   </data>
   <data name="newLogin_txt.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -951,16 +993,16 @@ new user</value>
     <value>3</value>
   </data>
   <data name="newPasswd_txb.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 20pt</value>
+    <value>Alef, 16pt</value>
   </data>
   <data name="newPasswd_txb.Location" type="System.Drawing.Point, System.Drawing">
-    <value>530, 209</value>
+    <value>489, 209</value>
   </data>
   <data name="newPasswd_txb.MaxLength" type="System.Int32, mscorlib">
     <value>32</value>
   </data>
   <data name="newPasswd_txb.Size" type="System.Drawing.Size, System.Drawing">
-    <value>484, 31</value>
+    <value>484, 30</value>
   </data>
   <data name="newPasswd_txb.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -984,16 +1026,16 @@ new user</value>
     <value>2</value>
   </data>
   <data name="confPasswd_txb.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 20pt</value>
+    <value>Alef, 16pt</value>
   </data>
   <data name="confPasswd_txb.Location" type="System.Drawing.Point, System.Drawing">
-    <value>530, 252</value>
+    <value>489, 252</value>
   </data>
   <data name="confPasswd_txb.MaxLength" type="System.Int32, mscorlib">
     <value>32</value>
   </data>
   <data name="confPasswd_txb.Size" type="System.Drawing.Size, System.Drawing">
-    <value>484, 31</value>
+    <value>484, 30</value>
   </data>
   <data name="confPasswd_txb.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -1016,8 +1058,14 @@ new user</value>
   <data name="&gt;&gt;confPasswd_txb.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <metadata name="admingetin.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="admingetin.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
+  </data>
+  <data name="admingetin.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Alef, 8.25pt</value>
   </data>
   <data name="admingetin.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1026,7 +1074,7 @@ new user</value>
     <value>215, 291</value>
   </data>
   <data name="admingetin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 61</value>
+    <value>63, 63</value>
   </data>
   <data name="admingetin.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
@@ -1059,7 +1107,10 @@ new user</value>
     <value>Zoom</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1034, 523</value>
+    <value>962, 524</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

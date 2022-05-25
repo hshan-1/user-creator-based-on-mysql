@@ -666,5 +666,6 @@ private: System::Void admingetin_Click(System::Object^ sender, System::EventArgs
 	nextform->Show();
 }
 
+
 };
 }
