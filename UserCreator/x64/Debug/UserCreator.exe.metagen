@@ -231,6 +231,11 @@ Class UserCreator.core: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
 Class UserCreator.ui: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.String sqlconfig : Public
+    MySql.Data.MySqlClient.MySqlConnection con_toData : Public
+    MySql.Data.MySqlClient.MySqlCommand sql_syntax : Public
+    MySql.Data.MySqlClient.MySqlDataReader r_records : Public
   Methods:
     control(String): PrivateScope, Public, HideBySig
     getaccs_Click(Object, EventArgs): PrivateScope, Public, HideBySig

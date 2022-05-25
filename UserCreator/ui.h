@@ -13,7 +13,7 @@ namespace UserCreator {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
-	//using namespace UserCreator;
+	using namespace UserCreator;
 	using namespace MySql::Data::MySqlClient;
 
 	/// <summary>
@@ -25,9 +25,13 @@ namespace UserCreator {
 		ui(void)
 		{
 			InitializeComponent();
+
 			
 		}
-
+		String^ sqlconfig = L"datasource=localhost;port=3306;username=root;password=guest1;database=userapp";
+		MySqlConnection^ con_toData = gcnew MySqlConnection(sqlconfig);
+		MySqlCommand^ sql_syntax = gcnew MySqlCommand("SELECT * FROM userapp.user WHERE login='" + login + "' AND passwd = concat(UPPER(SHA1(UNHEX(SHA1(\"" + passwd + "\")))));", con_toData);
+		MySqlDataReader^ r_records;
 	protected:
 		/// <summary>
 		/// Clean up any resources being used.
@@ -59,7 +63,8 @@ namespace UserCreator {
 	private: System::Windows::Forms::TextBox^ newLogin_txt;
 	private: System::Windows::Forms::TextBox^ newPasswd_txb;
 	private: System::Windows::Forms::TextBox^ confPasswd_txb;
-	private: System::Windows::Forms::Label^ statusInfo;
+
+	private: System::Windows::Forms::Button^ admingetin;
 	private: System::ComponentModel::IContainer^ components;
 
 	private:
@@ -96,7 +101,7 @@ namespace UserCreator {
 			this->newLogin_txt = (gcnew System::Windows::Forms::TextBox());
 			this->newPasswd_txb = (gcnew System::Windows::Forms::TextBox());
 			this->confPasswd_txb = (gcnew System::Windows::Forms::TextBox());
-			this->statusInfo = (gcnew System::Windows::Forms::Label());
+			this->admingetin = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			this->SuspendLayout();
@@ -271,12 +276,12 @@ namespace UserCreator {
 			this->confPasswd_txb->Name = L"confPasswd_txb";
 			this->confPasswd_txb->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &ui::confPasswd_txb_KeyDown);
 			// 
-			// statusInfo
+			// admingetin
 			// 
-			resources->ApplyResources(this->statusInfo, L"statusInfo");
-			this->statusInfo->ForeColor = System::Drawing::Color::DarkRed;
-			this->statusInfo->Name = L"statusInfo";
-			this->statusInfo->TextChanged += gcnew System::EventHandler(this, &ui::statusInfo_TextChanged);
+			resources->ApplyResources(this->admingetin, L"admingetin");
+			this->admingetin->Name = L"admingetin";
+			this->admingetin->UseVisualStyleBackColor = true;
+			this->admingetin->Click += gcnew System::EventHandler(this, &ui::admingetin_Click);
 			// 
 			// ui
 			// 
@@ -285,7 +290,7 @@ namespace UserCreator {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
 			this->CancelButton = this->button1;
-			this->Controls->Add(this->statusInfo);
+			this->Controls->Add(this->admingetin);
 			this->Controls->Add(this->confPasswd_txb);
 			this->Controls->Add(this->newPasswd_txb);
 			this->Controls->Add(this->newLogin_txt);
@@ -323,11 +328,11 @@ namespace UserCreator {
 		int a = 0;
 		String^ status = "offline";
 		core^ nextform = gcnew core("", "", "");
+		String^ yourname;
+		String^ yourLname;
 	private: System::Void ui_Load(System::Object^ sender, System::EventArgs^ e) {
 		//MessageBox::Show("Welcome to user creator\nlogger\npasswordcheccker\nmooltitool\naudioplayer\ndemonaslayer");
 		this->ClientSize = System::Drawing::Size(524, 524);
-		this->statusInfo->Text = status+"";
-		
 	}
 	public: void control(String^ sql_syntax)
 	{
@@ -336,8 +341,8 @@ namespace UserCreator {
 	private: void control(String^ login, String^ passwd)//checks log info 
 	{
 		String^ sqlconfig = L"datasource=localhost;port=3306;username=root;password=guest1;database=userapp";
-		MySqlConnection^ con_toData= gcnew MySqlConnection(sqlconfig);
-		MySqlCommand^ sql_syntax = gcnew MySqlCommand("SELECT * FROM userapp.user WHERE login='"+login+"' AND passwd = concat(UPPER(SHA1(UNHEX(SHA1(\""+ passwd +"\")))));", con_toData);
+		MySqlConnection^ con_toData = gcnew MySqlConnection(sqlconfig);
+		MySqlCommand^ sql_syntax = gcnew MySqlCommand("SELECT * FROM userapp.user WHERE login='" + login + "' AND passwd = concat(UPPER(SHA1(UNHEX(SHA1(\"" + passwd + "\")))));", con_toData);
 		MySqlDataReader^ r_records;
 		try
 		{
@@ -356,14 +361,15 @@ namespace UserCreator {
 					case 1:
 					{
 						status = "admin";
-						this->statusInfo->Text = status;
+						this->admingetin->Visible = true;
+						yourname = r_records->GetString(3);
+						yourLname = r_records->GetString(4);
 						break;
 					}
 					default:
 					{
 						
 						status = "online";
-						this->statusInfo->Text = status;
 						core^ nextform = gcnew core(r_records->GetString(3), r_records->GetString(4), status);
 						this->TopMost = false;
 						nextform->Show();
@@ -393,7 +399,8 @@ namespace UserCreator {
 		{
 			MessageBox::Show(""+r_fail->Message);
 			
-		}	
+		}
+		
 	}
 	private: void guard()
 	{
@@ -445,6 +452,7 @@ public: System::Void getaccs_Click(System::Object^ sender, System::EventArgs^ e)
 		this->passwd->Enabled = true;
 		this->getaccs->Text = "Log in";
 	}
+	
 	//String^ sqlconfig = "datasource=localhost;3306;username=root;password=guest1;userapp";
 	
 }
@@ -452,8 +460,8 @@ private: System::Void login_KeyDown(System::Object^ sender, System::Windows::For
 	if ("")
 	{
 		Random^ rand = gcnew Random;
-		int tone = rand->Next(3, 9);
-		Beep(tone * 100, 100);
+		int tone = rand->Next(5, 9);
+		Beep(tone * 150, 100);
 	
 	}
 }
@@ -461,9 +469,8 @@ private: System::Void passwd_KeyDown(System::Object^ sender, System::Windows::Fo
 
 		Random^ rand = gcnew Random;
 		int tone =rand->Next(0,23);
-		Beep((tone*100)+350, 100);
+		Beep((tone)+100, 100);
 		char maskedpasswordchar[24] = { 'a', 'b', 'c', 'd','e','f','g','h','j','k','l','m','n','o','p','r','s','t','u','w','y','z','x','q' };
-		//char maskedpasswordchar[24] = {001,002,003,004,005,006,007,030,011,012,042,014,015,016,017,020,021,022,023,024}; these funky characters didn't work 
 		this->passwd->PasswordChar += maskedpasswordchar[tone];
 
 }
@@ -475,7 +482,6 @@ private: System::Void passwd_KeyDown(System::Object^ sender, System::Windows::Fo
 		this->nextform->Close();
 		status = "offline";
 	}
-	this->statusInfo->Text = status;
 	this->getaccs->Enabled = true;
 	this->getaccs->Text = "Log in";
 	this->login->Enabled = true;
@@ -484,7 +490,7 @@ private: System::Void passwd_KeyDown(System::Object^ sender, System::Windows::Fo
 	
 }
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	Form::Close();
+	this->Close();
 }
 
 private: System::Void newUser_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -556,7 +562,7 @@ private: System::Void newPasswd_txb_KeyDown(System::Object^ sender, System::Wind
 
 	Random^ rand = gcnew Random;
 	int tone = rand->Next(0, 23);
-	Beep((tone * 100) + 350, 100);
+	Beep((tone)+100, 100);
 	char maskedpasswordchar[24] = { 'a', 'b', 'c', 'd','e','f','g','h','j','k','l','m','n','o','p','r','s','t','u','w','y','z','x','q' };
 	//char maskedpasswordchar[24] = {001,002,003,004,005,006,007,030,011,012,042,014,015,016,017,020,021,022,023,024}; these funky characters didn't work 
 	
@@ -568,7 +574,7 @@ private: System::Void confPasswd_txb_KeyDown(System::Object^ sender, System::Win
 
 	Random^ rand = gcnew Random;
 	int tone = rand->Next(0, 23);
-	Beep((tone * 100) + 350, 100);
+	Beep((tone)+100, 100);//had to change that it was really driving me crazy 
 	char maskedpasswordchar[24] = { 'a', 'b', 'c', 'd','e','f','g','h','j','k','l','m','n','o','p','r','s','t','u','w','y','z','x','q' };
 	//char maskedpasswordchar[24] = {001,002,003,004,005,006,007,030,011,012,042,014,015,016,017,020,021,022,023,024}; these funky characters didn't work 
 
@@ -633,16 +639,21 @@ private: System::Void newAdmin_Click(System::Object^ sender, System::EventArgs^ 
 	}
 }
 private: System::Void statusInfo_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	if (status == "offline")
+	/*if (status== "offline")
 	{
 		this->statusInfo->ForeColor = System::Drawing::Color::DarkRed;
 		
 	}
+	if (status== "admin") 
+	{
+		this->admingetin->Visible = true;
+		Beep(15000, 200);
+		this->statusInfo->ForeColor = System::Drawing::Color::AliceBlue;
+	}
 	else
 	{
 		this->statusInfo->ForeColor = System::Drawing::Color::LawnGreen;
-		
-	}
+	}*/
 }
 private: System::Void statusInfo_Click(System::Object^ sender, System::EventArgs^ e) {
 }
@@ -650,5 +661,10 @@ private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArg
 }
 private: System::Void passwd_TextChanged_1(System::Object^ sender, System::EventArgs^ e) {
 }
+private: System::Void admingetin_Click(System::Object^ sender, System::EventArgs^ e) {
+	core^ nextform = gcnew core(yourname,yourLname, status);
+	nextform->Show();
+}
+
 };
 }

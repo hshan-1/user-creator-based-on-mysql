@@ -1016,37 +1016,37 @@ new user</value>
   <data name="&gt;&gt;confPasswd_txb.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="statusInfo.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="admingetin.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
   </data>
-  <data name="statusInfo.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 10pt</value>
-  </data>
-  <data name="statusInfo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="admingetin.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="statusInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 9</value>
+  <data name="admingetin.Location" type="System.Drawing.Point, System.Drawing">
+    <value>215, 291</value>
   </data>
-  <data name="statusInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 17</value>
+  <data name="admingetin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 61</value>
   </data>
-  <data name="statusInfo.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
+  <data name="admingetin.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
   </data>
-  <data name="statusInfo.Text" xml:space="preserve">
-    <value>offline</value>
+  <data name="admingetin.Text" xml:space="preserve">
+    <value>get in</value>
   </data>
-  <data name="&gt;&gt;statusInfo.Name" xml:space="preserve">
-    <value>statusInfo</value>
+  <data name="admingetin.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
-  <data name="&gt;&gt;statusInfo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;admingetin.Name" xml:space="preserve">
+    <value>admingetin</value>
   </data>
-  <data name="&gt;&gt;statusInfo.Parent" xml:space="preserve">
+  <data name="&gt;&gt;admingetin.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;admingetin.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;statusInfo.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;admingetin.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
