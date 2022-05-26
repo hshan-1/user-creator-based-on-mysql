@@ -398,7 +398,6 @@ namespace UserCreator {
 		catch (Exception^ r_fail)
 		{
 			MessageBox::Show(""+r_fail->Message);
-			
 		}
 		
 	}
@@ -446,30 +445,7 @@ public: System::Void getaccs_Click(System::Object^ sender, System::EventArgs^ e)
 		control(login, passwd);
 	}
 	else
-	{
-		status = "offline";
-		this->login->Enabled = true;
-		this->passwd->Enabled = true;
-		this->getaccs->Text = "Log in";
-	}
 	
-	//String^ sqlconfig = "datasource=localhost;3306;username=root;password=guest1;userapp";
-	
-}
-private: System::Void login_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
-	if ("")
-	{
-		Random^ rand = gcnew Random;
-		int tone = rand->Next(5, 9);
-		Beep(tone * 150, 100);
-	
-	}
-}
-private: System::Void passwd_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
-
-		Random^ rand = gcnew Random;
-		int tone =rand->Next(0,23);
-		Beep((tone)+100, 100);
 		char maskedpasswordchar[24] = { 'a', 'b', 'c', 'd','e','f','g','h','j','k','l','m','n','o','p','r','s','t','u','w','y','z','x','q' };
 		this->passwd->PasswordChar += maskedpasswordchar[tone];
 

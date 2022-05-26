@@ -1,6 +1,49 @@
 ﻿  core.cpp
+D:\.dev\repos\hshan-1\gandalf\UserCreator\core.h(98,3): error C2065: "status": niezadeklarowany identyfikator
+D:\.dev\repos\hshan-1\gandalf\UserCreator\core.h(99,9): error C2039: „login”: nie jest składową elementu „UserCreator::core”
+D:\.dev\repos\hshan-1\gandalf\UserCreator\core.h(19): message : zobacz deklarację „UserCreator::core”
+D:\.dev\repos\hshan-1\gandalf\UserCreator\core.h(100,9): error C2039: „passwd”: nie jest składową elementu „UserCreator::core”
+D:\.dev\repos\hshan-1\gandalf\UserCreator\core.h(19): message : zobacz deklarację „UserCreator::core”
+D:\.dev\repos\hshan-1\gandalf\UserCreator\core.h(101,9): error C2039: „getaccs”: nie jest składową elementu „UserCreator::core”
+D:\.dev\repos\hshan-1\gandalf\UserCreator\core.h(19): message : zobacz deklarację „UserCreator::core”
   login.cpp
+D:\.dev\repos\hshan-1\gandalf\UserCreator\core.h(98,3): error C2065: "status": niezadeklarowany identyfikator
+D:\.dev\repos\hshan-1\gandalf\UserCreator\core.h(99,9): error C2039: „login”: nie jest składową elementu „UserCreator::core”
+D:\.dev\repos\hshan-1\gandalf\UserCreator\core.h(19): message : zobacz deklarację „UserCreator::core”
+D:\.dev\repos\hshan-1\gandalf\UserCreator\core.h(100,9): error C2039: „passwd”: nie jest składową elementu „UserCreator::core”
+D:\.dev\repos\hshan-1\gandalf\UserCreator\core.h(19): message : zobacz deklarację „UserCreator::core”
+D:\.dev\repos\hshan-1\gandalf\UserCreator\core.h(101,9): error C2039: „getaccs”: nie jest składową elementu „UserCreator::core”
+D:\.dev\repos\hshan-1\gandalf\UserCreator\core.h(19): message : zobacz deklarację „UserCreator::core”
+D:\.dev\repos\hshan-1\gandalf\UserCreator\ui.h(116,85): error C2039: „login_KeyDown”: nie jest składową elementu „UserCreator::ui”
+D:\.dev\repos\hshan-1\gandalf\UserCreator\ui.h(22): message : zobacz deklarację „UserCreator::ui”
+D:\.dev\repos\hshan-1\gandalf\UserCreator\ui.h(116,1): error C2065: "login_KeyDown": niezadeklarowany identyfikator
+D:\.dev\repos\hshan-1\gandalf\UserCreator\ui.h(116,1): error C3924: błąd w argumencie #2 wywołania konstruktora delegowania „<Nieznany>S”:
+D:\.dev\repos\hshan-1\gandalf\UserCreator\ui.h(116,1): message : oczekiwano wskaźnika do funkcji składowej
+D:\.dev\repos\hshan-1\gandalf\UserCreator\ui.h(126,86): error C2039: „passwd_KeyDown”: nie jest składową elementu „UserCreator::ui”
+D:\.dev\repos\hshan-1\gandalf\UserCreator\ui.h(22): message : zobacz deklarację „UserCreator::ui”
+D:\.dev\repos\hshan-1\gandalf\UserCreator\ui.h(126,1): error C2065: "passwd_KeyDown": niezadeklarowany identyfikator
+D:\.dev\repos\hshan-1\gandalf\UserCreator\ui.h(126,1): error C3924: błąd w argumencie #2 wywołania konstruktora delegowania „<Nieznany>S”:
+D:\.dev\repos\hshan-1\gandalf\UserCreator\ui.h(126,1): message : oczekiwano wskaźnika do funkcji składowej
+D:\.dev\repos\hshan-1\gandalf\UserCreator\ui.h(450,33): error C2065: "maskedpasswordchar": niezadeklarowany identyfikator
+D:\.dev\repos\hshan-1\gandalf\UserCreator\ui.h(450,52): error C2065: "tone": niezadeklarowany identyfikator
   ui.cpp
+D:\.dev\repos\hshan-1\gandalf\UserCreator\core.h(98,3): error C2065: "status": niezadeklarowany identyfikator
+D:\.dev\repos\hshan-1\gandalf\UserCreator\core.h(99,9): error C2039: „login”: nie jest składową elementu „UserCreator::core”
+D:\.dev\repos\hshan-1\gandalf\UserCreator\core.h(19): message : zobacz deklarację „UserCreator::core”
+D:\.dev\repos\hshan-1\gandalf\UserCreator\core.h(100,9): error C2039: „passwd”: nie jest składową elementu „UserCreator::core”
+D:\.dev\repos\hshan-1\gandalf\UserCreator\core.h(19): message : zobacz deklarację „UserCreator::core”
+D:\.dev\repos\hshan-1\gandalf\UserCreator\core.h(101,9): error C2039: „getaccs”: nie jest składową elementu „UserCreator::core”
+D:\.dev\repos\hshan-1\gandalf\UserCreator\core.h(19): message : zobacz deklarację „UserCreator::core”
+D:\.dev\repos\hshan-1\gandalf\UserCreator\ui.h(116,85): error C2039: „login_KeyDown”: nie jest składową elementu „UserCreator::ui”
+D:\.dev\repos\hshan-1\gandalf\UserCreator\ui.h(22): message : zobacz deklarację „UserCreator::ui”
+D:\.dev\repos\hshan-1\gandalf\UserCreator\ui.h(116,1): error C2065: "login_KeyDown": niezadeklarowany identyfikator
+D:\.dev\repos\hshan-1\gandalf\UserCreator\ui.h(116,1): error C3924: błąd w argumencie #2 wywołania konstruktora delegowania „<Nieznany>S”:
+D:\.dev\repos\hshan-1\gandalf\UserCreator\ui.h(116,1): message : oczekiwano wskaźnika do funkcji składowej
+D:\.dev\repos\hshan-1\gandalf\UserCreator\ui.h(126,86): error C2039: „passwd_KeyDown”: nie jest składową elementu „UserCreator::ui”
+D:\.dev\repos\hshan-1\gandalf\UserCreator\ui.h(22): message : zobacz deklarację „UserCreator::ui”
+D:\.dev\repos\hshan-1\gandalf\UserCreator\ui.h(126,1): error C2065: "passwd_KeyDown": niezadeklarowany identyfikator
+D:\.dev\repos\hshan-1\gandalf\UserCreator\ui.h(126,1): error C3924: błąd w argumencie #2 wywołania konstruktora delegowania „<Nieznany>S”:
+D:\.dev\repos\hshan-1\gandalf\UserCreator\ui.h(126,1): message : oczekiwano wskaźnika do funkcji składowej
+D:\.dev\repos\hshan-1\gandalf\UserCreator\ui.h(450,33): error C2065: "maskedpasswordchar": niezadeklarowany identyfikator
+D:\.dev\repos\hshan-1\gandalf\UserCreator\ui.h(450,52): error C2065: "tone": niezadeklarowany identyfikator
   Generowanie kodu...
-  core.obj : napotkano moduł MSIL; konsolidowanie przyrostowe jest wyłączone dla modułów MSIL; zostanie wykonana pełna konsolidacja
-  UserCreator.vcxproj -> D:\.dev\repos\hshan-1\gandalf\UserCreator\x64\Debug\UserCreator.exe
